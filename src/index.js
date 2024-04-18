@@ -11,9 +11,7 @@ const toastMsg = document.querySelector('#toast-message')
 // ITERATION 1: Add event listener to the start button
 
 // Your code goes here ...
-const startButton = startBtn.addEventListener('click', () => {
-  startCountdown()
-})
+const startButton = startBtn.addEventListener('click', startCountdown)
 
 
 
