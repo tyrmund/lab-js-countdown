@@ -25,23 +25,20 @@ function startCountdown() {
 
   startBtn.disabled = true
 
-  let time = remainingTime
-  console.log(time);
-
   timer = setInterval(() => {
 
-    if (time === 10) {
+    if (remainingTime === 10) {
       showToast("⏰ Final countdown! ⏰")
     }
 
-    time--
-    timeSelector.innerText = time
+    remainingTime--
+    timeSelector.innerText = remainingTime
 
-    if (time === 5) {
+    if (remainingTime === 5) {
       showToast("Start the engines! 💥")
     }
 
-    if (time === 0) {
+    if (remainingTime === 0) {
       showToast("Lift off! 🚀")
       clearInterval(timer)
     }
@@ -54,17 +51,12 @@ function showToast(message) {
   console.log("showToast called!");
 
   // Your code goes here ...
-  let time = 3
-  const toastTimer = setInterval(() => {
-    time--
-    toastMsg.innerText = message
-    toastWindow.setAttribute('class', 'toast show')
+  toastMsg.innerText = message
+  toastWindow.setAttribute('class', 'toast show')
 
-    if (time === 0) {
-      toastWindow.setAttribute('class', 'toast')
-      clearInterval(toastTimer)
-    }
-  }, 1000)
+  setTimeout(() => {
+    toastWindow.setAttribute('class', 'toast')
+  }, 3000)
 
   // BONUS: ITERATION 4: TOAST CLOSE BUTTON
 
